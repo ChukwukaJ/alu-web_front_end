@@ -1,0 +1,298 @@
+/*
+  Resume Website Stylesheet
+  Author: Chukwuka J. Nwachukwu
+  Description: Modern, minimal, masculine, and professional theme
+*/
+
+:root {
+  --primary: #23272f;
+  --secondary: #3a3f47;
+  --accent: #1e90ff;
+  --background: #f5f6fa;
+  --text: #23272f;
+  --white: #fff;
+  --gray: #b0b3b8;
+  --font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.5em 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(35, 39, 47, 0.08);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links li a:hover {
+  color: var(--accent);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.3em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 3em 0 2em 0;
+  text-align: center;
+}
+.hero h1 {
+  margin: 0 0 0.3em 0;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 1.2em;
+  color: var(--gray);
+  margin-bottom: 0.5em;
+}
+.contact-info {
+  font-size: 1em;
+  color: var(--white);
+}
+.contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Section Styles */
+.section {
+  padding: 2.5em 0 2em 0;
+}
+.section h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: var(--primary);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.5em;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 0;
+  list-style: none;
+}
+.skills-list li {
+  background: var(--white);
+  color: var(--primary);
+  padding: 0.7em 1.2em;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(35, 39, 47, 0.05);
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* Experience & Education */
+.experience-item, .education-item, .project-item {
+  background: var(--white);
+  margin-bottom: 1.5em;
+  padding: 1.2em 1em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(35, 39, 47, 0.06);
+}
+.company, .school {
+  font-weight: 600;
+  color: var(--accent);
+}
+.date {
+  float: right;
+  color: var(--gray);
+  font-size: 0.95em;
+}
+
+/* Projects */
+.project-item h3 {
+  margin-top: 0;
+}
+
+/* Buttons */
+.btn {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1em;
+}
+.btn:hover {
+  background: #176dc1;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(35, 39, 47, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+.modal-content {
+  background: var(--white);
+  padding: 2em 2.5em;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90vw;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(35, 39, 47, 0.15);
+}
+.close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 1.5em;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+/* Contact Form */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+#contactForm label {
+  font-weight: 500;
+  color: var(--primary);
+}
+#contactForm input, #contactForm textarea {
+  padding: 0.7em;
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: var(--font-main);
+  resize: none;
+}
+#contactForm textarea {
+  min-height: 80px;
+}
+.error {
+  color: #d32f2f;
+  font-size: 0.9em;
+  min-height: 1.2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+  }
+  .nav-links {
+    gap: 1em;
+  }
+}
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .section h2 {
+    font-size: 1.4em;
+  }
+  .skills-list {
+    gap: 0.5em;
+  }
+}
+@media (max-width: 600px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    width: 180px;
+    align-items: flex-start;
+    padding: 1em 0.5em;
+    box-shadow: 0 2px 8px rgba(35, 39, 47, 0.12);
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 1em 0.5em;
+  }
+  .btn {
+    width: 100%;
+  }
+}
